@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Cambo&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: 'Raveo Display';
+  src: url('https://cdn.prod.website-files.com/69a5b999c46fca7b02e28da1/69a9b7fdbed8c48fc74ed5cf_Raveo-Display-Bold-BF6747d9eacddf5.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raveo Display';
+  src: url('https://cdn.prod.website-files.com/69a5b999c46fca7b02e28da1/69a9b7fd1eb99ceca37e3d2e_Raveo-Display-SemiBold-BF6747d9eba9183.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raveo Display';
+  src: url('https://cdn.prod.website-files.com/69a5b999c46fca7b02e28da1/69a9b7fd4b821022611f5434_Raveo-Display-Medium-BF6747d9eb6d8a9.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raveo Display';
+  src: url('https://cdn.prod.website-files.com/69a5b999c46fca7b02e28da1/69a9b7fedbc5f80b7e8ca333_Raveo-Display-Regular-BF6747d9eb6d8a9.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --light-gray: #484747;
+  --primary-color: #d5cfff;
+  --purple-color: #7d2cce;
+  --field-color: #f4f4f4;
+  --stock-color: #ececec;
+  --warning-color: #ff5e31;
+  --background: var(--white);
+  --foreground: var(--black);
+  --card: var(--white);
+  --card-foreground: var(--black);
+  --popover: var(--white);
+  --popover-foreground: var(--black);
+  --primary: var(--purple-color);
+  --primary-foreground: var(--white);
+  --secondary: var(--field-color);
+  --secondary-foreground: var(--black);
+  --muted: var(--field-color);
+  --muted-foreground: var(--light-gray);
+  --accent: var(--primary-color);
+  --accent-foreground: var(--black);
+  --destructive: #ea384c;
+  --destructive-foreground: var(--white);
+  --border: var(--stock-color);
+  --input: var(--stock-color);
+  --ring: var(--purple-color);
+  --radius: 8px;
+}
+
+@theme inline {
+  --font-sans: 'Raveo Display', Arial, sans-serif;
+  --font-display: 'Raveo Display', Arial, sans-serif;
+  --font-accent: Cambo, Georgia, serif;
+  --font-mono: ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Raveo Display', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raveo Display', Arial, sans-serif;
+    letter-spacing: -0.02em;
+  }
+  p {
+    color: var(--light-gray);
+  }
+}
+
+.outgrid-container {
+  max-width: 1410px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.outgrid-section {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.outgrid-section-sm {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.section-sub-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--black);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.section-sub-wrap.light {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.section-sub-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: var(--warning-color);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+}
+
+.section-label::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--purple-color);
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: var(--black);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-button:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--white);
+}
+
+.secondary-btn-text {
+  background-color: var(--black);
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.secondary-button:hover .secondary-btn-text {
+  background-color: var(--purple-color);
+}
+
+.secondary-btn-icon {
+  background-color: var(--black);
+  border-radius: 8px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.secondary-button:hover .secondary-btn-icon {
+  background-color: var(--purple-color);
+}
+
+.secondary-button.outline .secondary-btn-text,
+.secondary-button.outline .secondary-btn-icon {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--stock-color);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.testimonial-marquee {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--stock-color);
+  border-radius: 3px;
+}

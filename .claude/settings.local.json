@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(Select-Object -First 30)",
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:outgrid-template.webflow.io)"
+    ]
+  }
+}
